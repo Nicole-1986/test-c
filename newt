@@ -1,0 +1,20 @@
+    编译：gcc -o newt newt.c -lnewt
+    
+    #include <stdio.h>  
+    #include <newt.h>  
+    int main()  
+    {  
+      newtInit();  
+      newtCls();    
+      int rc = newtWinChoice(("Disc Found"), ("OK"), ("Skip"),  
+                 ("To begin testing the media before installation press %s.\n\n"  
+                  "Choose %s to skip the media test and start the installation."),  
+                 ("OK"), ("Skip"));  
+      if (rc == 1) {  
+         newtDrawRootText(0,0,"you choose:ok");  
+         newtRefresh();  
+      }  
+      sleep(3);  
+      newtFinished();  
+      return 0;  
+    }  
