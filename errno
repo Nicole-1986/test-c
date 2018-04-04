@@ -1,0 +1,15 @@
+
+#include <string.h>
+#include <stdio.h>
+
+#define NUM    150
+
+int main(void)
+{
+    int i;
+    for ( i=0; i<NUM; i++ )
+    {
+        printf( "%d:%s\n", i, strerror(i) );
+    }
+    return 0;
+}
